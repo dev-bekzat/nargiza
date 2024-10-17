@@ -51,7 +51,7 @@ h1 {
     padding: 0 15px;
     font-size: 16px;
     border: 2px solid rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .input-box input:focus {
@@ -71,11 +71,11 @@ h1 {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: background-color 0.4s ease;
 }
 
 .button input:hover {
-    background: #ff2b6e;
+    background-color: #ff2b6e;
 }
 
 .events-list {
@@ -91,11 +91,11 @@ h1 {
     color: #333;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Указание, что меняются фон и цвет текста */
 }
 
 .event-item:hover {
-    background: #ff79ac;
+    background-color: #ff79ac;
     color: white;
 }
 
@@ -107,4 +107,20 @@ h1 {
     padding: 10px;
     background: #f2f2f2;
     border-radius: 5px;
+}
+
+.profile-btn {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    background: #ff79ac;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.profile-btn:hover {
+    background-color: #ff2b6e;
 }

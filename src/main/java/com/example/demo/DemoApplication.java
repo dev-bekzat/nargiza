@@ -18,18 +18,18 @@ public class DemoApplication {
 
 		@GetMapping("/")
 		public String home() {
-			return "index"; // возвращает index.html
+			return "index";
 		}
 
 		@PostMapping("/login")
 		public String login() {
 			System.out.println("Login form submitted");
-			return "redirect:/secondPage"; // перенаправляет на /secondPage
+			return "redirect:/secondPage";
 		}
 
 		@GetMapping("/secondPage")
 		public String secondPage() {
-			return "secondPage"; // возвращает secondPage.html
+			return "secondPage";
 		}
 	}
 }
