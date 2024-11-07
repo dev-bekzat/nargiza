@@ -31,5 +31,11 @@ public class DemoApplication {
 		public String secondPage() {
 			return "secondPage";
 		}
+
+		@GetMapping("/profile")
+		public String profile() {
+			return "htmlthree";
+		}
+
 	}
 }

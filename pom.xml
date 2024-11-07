@@ -47,6 +47,31 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spring Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+
+		<!-- MySQL Connector (если он вам также нужен для подключения к MySQL) -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.24</version>
+		</dependency>
+
+		<!-- Spring Web (если требуется для вашего проекта) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 	</dependencies>
 
