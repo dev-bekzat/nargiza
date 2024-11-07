@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff79ac;
+    padding-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.edit-btn {
+    background: #ff79ac;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.edit-btn:hover {
+    background: #ff4e99;
+}
+
+.profile-info {
+    margin: 20px 0;
+}
+
+.profile-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff79ac;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.events {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.personal-events, .joined-events {
+    width: 48%;
+    background: #fffcf7; /* Light background for sections */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Padding for content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.events h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0; /* No padding for ul */
+}
+
+ul li {
+    background: #ff79ac; /* Pink background for list items */
+    color: #fff; /* White text */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+ul li:hover {
+    background: #ff4e99; /* Darker pink on hover */
+}
