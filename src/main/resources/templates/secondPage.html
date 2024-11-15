@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/csstwo.css">
@@ -8,47 +8,47 @@
     <title>Create Event</title>
 </head>
 <body>
-    <div class="container">
-        <div class="form-section">
-            <h1>Create Event</h1>
-            <form action="create_event.php" method="POST">
-                <div class="input-box">
-                    <input type="text" placeholder="Event Name" required>
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Number of Participants" required>
-                </div>
-                <div class="input-box">
-                    <input type="datetime-local" required>
-                </div>
-                <div class="input-box">
-                    <input type="text" placeholder="Location" required>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Create Event">
-                </div>
-            </form>
-
-            <div class="button">
-                <a href="/profile" class="profile-btn">Go to Profile</a>
+<div class="container">
+    <div class="form-section">
+        <h1>Create Event</h1>
+        <!-- Заменяем action="create_event.php" на нужный URL (например, /createEvent) -->
+        <form action="/createEvent" method="POST">
+            <div class="input-box">
+                <input type="text" name="eventName" placeholder="Event Name" required>
             </div>
+            <div class="input-box">
+                <input type="number" name="participants" placeholder="Number of Participants" required>
+            </div>
+            <div class="input-box">
+                <input type="datetime-local" name="eventDate" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="location" placeholder="Location" required>
+            </div>
+            <div class="button">
+                <input type="submit" value="Create Event">
+            </div>
+        </form>
+
+        <div class="button">
+            <a href="/profile" class="profile-btn">Go to Profile</a>
         </div>
-        
-        <div class="events-section">
-            <h1>Events</h1>
-            <ul class="events-list">
-                <li><a href="#" class="event-item">Event 1</a></li>
-                <li><a href="#" class="event-item">Event 2</a></li>
-                <li><a href="#" class="event-item">Event 3</a></li>
-                <!-- Add more events dynamically -->
-            </ul>
-            <div class="event-details">
-                <h2>Event Details</h2>
-                <div class="details-content">
-                    <p>Select an event to see details here.</p>
-                </div>
+    </div>
+
+    <div class="events-section">
+        <h1>Events</h1>
+        <ul class="events-list">
+            <li><a href="#" class="event-item">Event 1</a></li>
+            <li><a href="#" class="event-item">Event 2</a></li>
+            <li><a href="#" class="event-item">Event 3</a></li>
+        </ul>
+        <div class="event-details">
+            <h2>Event Details</h2>
+            <div class="details-content">
+                <p>Select an event to see details here.</p>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
