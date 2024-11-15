@@ -95,3 +95,9 @@ main {
     font-size: 14px;
     color: #666;
 }
+
+.event-card {
+    display: block; /* Убирает подчеркивание и делает карточку кликабельной */
+    text-decoration: none;
+    color: inherit; /* Сохраняет цвета текста */
+}
