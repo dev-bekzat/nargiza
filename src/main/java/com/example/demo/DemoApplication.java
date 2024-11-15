@@ -27,6 +27,12 @@ public class DemoApplication {
 			return "redirect:/secondPage";
 		}
 
+		@PostMapping("/register")
+		public String register() {
+			System.out.println("Signup form submitted");
+			return "redirect:/secondPage"; // Или перенаправить на другую страницу
+		}
+
 		@GetMapping("/secondPage")
 		public String secondPage() {
 			return "secondPage";
@@ -36,6 +42,6 @@ public class DemoApplication {
 		public String profile() {
 			return "htmlthree";
 		}
-
 	}
+
 }
