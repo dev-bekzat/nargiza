@@ -1,0 +1,124 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F8FC;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #4A90E2;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-icon {
+    width: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 100px;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Event section styling */
+.event-section {
+    background-color: #CDE4FD;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Image display styling */
+.image-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-image {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.event-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Event details styling */
+.event-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.event-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-field label {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.event-field input {
+    padding: 8px;
+    border: 1px solid #4A90E2;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+
+.join-button {
+    padding: 10px 20px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}

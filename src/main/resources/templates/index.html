@@ -1,80 +1,52 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Posts - SDU Friends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <div class="container">
-    <input type="checkbox" id="flip">
-    <div class="cover">
-      <div class="front">
-        <img src="frontImg.jpg" alt="">
-        <div class="text">
-          <span class="text-1">Every new friend is a <br> new adventure</span>
-          <span class="text-2">Let's get connected</span>
+  <header>
+    <div class="menu-icon">☰</div>
+    <img src="pm_images/logo.png.png" alt="SDU Friends Logo" class="logo">
+  </header>
+  <main>
+    <h2>Trending Posts</h2>
+    <div class="posts-grid">
+      <div class="post-card">
+        <img src="pm_images/study_buddies.png" alt="Looking for study buddies?" class="post-image">
+        <div class="post-content">
+          <h3>Looking for study buddies?</h3>
+          <p>Join our platform and connect with like-minded students at your university!</p>
+          <a href="#" class="read-more">read more</a>
         </div>
       </div>
-      <div class="back">
-        <img class="backImg" src="backImg.jpg" alt="">
-        <div class="text">
-          <span class="text-1">Complete miles of journey <br> with one step</span>
-          <span class="text-2">Let's get started</span>
+      <div class="post-card">
+        <img src="pm_images/stay_focused.png" alt="Struggling to stay focused?" class="post-image">
+        <div class="post-content">
+          <h3>Struggling to stay focused?</h3>
+          <p>Join our university's community platform and never study alone again...</p>
+          <a href="#" class="read-more">read more</a>
+        </div>
+      </div>
+      <div class="post-card">
+        <img src="pm_images/boost_productivity.png" alt="Boost your productivity!" class="post-image">
+        <div class="post-content">
+          <h3>Boost your productivity!</h3>
+          <p>Connect with classmates who share your study habits and subjects...</p>
+          <a href="#" class="read-more">read more</a>
+        </div>
+      </div>
+      <div class="post-card">
+        <img src="pm_images/university_life.png" alt="Make your university life more meaningful!" class="post-image">
+        <div class="post-content">
+          <h3>Make your university life more meaningful!</h3>
+          <p>Meet people with shared interests, study together, and build friendships that last a lifetime...</p>
+          <a href="#" class="read-more">read more</a>
         </div>
       </div>
     </div>
-    <div class="forms">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-          <form action="/login" method="POST">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Submit">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div>
-        </form>
-      </div>
-        <div class="signup-form">
-          <div class="title">Signup</div>
-        <form action="/register" method="POST">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="Submit">
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-            </div>
-      </form>
-    </div>
-    </div>
-    </div>
-  </div>
+  </main>
 </body>
 </html>

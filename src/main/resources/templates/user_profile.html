@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="user_profile.css">
+</head>
+<body>
+        <header>
+          <div class="menu-icon">☰</div>
+          <img src="pm_images/logo.png.png" alt="SDU Friends Logo" class="logo">
+        </header>
+  <main>
+    <section class="profile-header">
+      <img src="pm_images/profile_picture.png" alt="Profile Picture" class="profile-picture">
+      <div class="profile-info">
+        <h2>Alex King</h2>
+        <button class="edit-profile-btn">Edit Profile</button>
+      </div>
+    </section>
+    <section class="tabs">
+      <button class="tab active" onclick="showTab('my-events')">My Events</button>
+      <button class="tab" onclick="showTab('my-posts')">My Posts</button>
+      <button class="tab" onclick="showTab('joined-events')">Joined Events</button>
+    </section>
+    <section id="my-events" class="tab-content">
+      <div class="carousel">
+        <button class="carousel-btn left">&#9664;</button>
+        <div class="event-card">
+          <img src="pm_images/concert.png" alt="Concert">
+          <div class="event-info">
+            <h3>Concert</h3>
+            <p>27.10.24</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="pm_images/mountain.png" alt="Mountain">
+          <div class="event-info">
+            <h3>Mountain</h3>
+            <p>31.10.24</p>
+          </div>
+        </div>
+        <button class="carousel-btn right">&#9654;</button>
+      </div>
+      <button class="create-btn">Create Event</button>
+    </section>
+    <section id="my-posts" class="tab-content" style="display: none;">
+      <div class="no-content">You don’t have posts</div>
+      <button class="create-btn">Create Post</button>
+    </section>
+    <section id="joined-events" class="tab-content" style="display: none;">
+      <div class="no-content">You did not join any events</div>
+      <button class="create-btn">Upcoming Events</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

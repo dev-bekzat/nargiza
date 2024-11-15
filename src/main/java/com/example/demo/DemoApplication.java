@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -18,30 +17,32 @@ public class DemoApplication {
 
 		@GetMapping("/")
 		public String home() {
-			return "index";
+			return "firstpage"; // Главная страница для входа
 		}
 
-		@PostMapping("/login")
-		public String login() {
-			System.out.println("Login form submitted");
-			return "redirect:/secondPage";
+		@GetMapping("/home")
+		public String homePage() {
+			return "home"; // Основная страница SDU Friends
 		}
 
-		@PostMapping("/register")
-		public String register() {
-			System.out.println("Signup form submitted");
-			return "redirect:/secondPage"; // Или перенаправить на другую страницу
+		@GetMapping("/events")
+		public String events() {
+			return "events"; // Страница со списком событий
 		}
 
-		@GetMapping("/secondPage")
-		public String secondPage() {
-			return "secondPage";
+		@GetMapping("/event-info")
+		public String eventInfo() {
+			return "event-info"; // Страница с подробной информацией о событии
+		}
+
+		@GetMapping("/create")
+		public String createEvent() {
+			return "create"; // Страница для создания нового события
 		}
 
 		@GetMapping("/profile")
 		public String profile() {
-			return "htmlthree";
+			return "htmlthree"; // Профиль пользователя
 		}
 	}
-
 }

@@ -1,0 +1,151 @@
+/* Сброс отступов и стилей по умолчанию */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter , sans-serif;
+    background-color: #DFF2FE;
+    color: #333;
+    text-align: center;
+}
+
+/* Верхний логотип и кнопка */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo-img {
+    margin-top: 100px;
+    width: 120px; /* Размер логотипа */
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-btn {
+    margin-top: 100px;
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 15px 30px; /* Увеличение размера кнопки */
+    font-size: 18px; /* Увеличенный шрифт */
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Основной блок с текстом слева и изображением справа */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    color: #0091FF;
+    font-size: 75px;
+    margin-bottom: 10px;
+    
+}
+
+.hero-content p {
+    color: #555;
+    font-size: 22px;
+    font-family:'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.get-started-btn {
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Блок с компьютером и текстом */
+.community {
+    padding: 40px;
+}
+
+.community h2 {
+    color: #4A90E2;
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.laptop {
+    margin-top: 20px;
+}
+
+.laptop img {
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Описание перед футером с дополнительными стилями */
+.description {
+    background-color: #F0F8FF;
+    padding: 40px;
+    margin: 100px;
+    border-radius: 50px;
+}
+
+.description p {
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    color: #333;
+    max-width: 800px;
+    font-weight: 500;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Нижний колонтитул */
+footer {
+    background-color: #4EAFFF;
+    padding: 30px;
+    color: #fff;
+}
+
+.footer-logo {
+    max-width: 140px;
+    color: #fff;
+    margin-bottom: 35px;
+}
+
+.footer-icons {
+    max-width: 120px;
+    margin-top: 10px;
+}
+

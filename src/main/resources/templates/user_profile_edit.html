@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile - SDU Friends</title>
+  <link rel="stylesheet" href="user_profile_edit_style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon">☰</div>
+    <img src="pm_images/logo.png.png" alt="SDU Friends Logo" class="logo">
+  </header>
+  <main>
+    <div class="profile-edit-container">
+      <div class="upload-section">
+        <label for="profile-upload" class="upload-label">
+          <img src="pm_images/upload_icon.png" alt="Upload Icon" class="upload-icon">
+        </label>
+        <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+      </div>
+      <div class="form-container">
+        <div class="left-section">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" placeholder="">
+          
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" placeholder="">
+        </div>
+        <div class="right-section">
+          <label for="date-of-birth">Date of Birth</label>
+          <input type="date" id="date-of-birth">
+
+          <label for="major">Major</label>
+          <select id="major">
+            <option value=""></option>
+            <option value="cs">Computer Science</option>
+            <option value="business">Business Administration</option>
+            <option value="engineering">Engineering</option>
+          </select>
+
+          <label for="course-number">Course Number</label>
+          <select id="course-number">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+      </div>
+      <button class="edit-button">Edit</button>
+    </div>
+  </main>
+</body>
+</html>

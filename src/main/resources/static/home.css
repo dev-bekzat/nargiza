@@ -1,0 +1,193 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F8FC;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A90E2;
+    padding: 15px 30px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    margin-right: 15px;
+}
+
+.burger-icon {
+    width: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.home-link {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-right .icon, .header-right .profile-pic {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+/* Main content layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Welcome section */
+.welcome {
+    grid-column: 1 / 3;
+    background-color: #CDE4FD;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 200px; /* Минимальная высота для увеличения */
+}
+
+.welcome h1 {
+    font-size: 24px;
+    color: #004AAD;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #225D94;
+    font-size: 16px;
+}
+
+/* Upcoming events */
+.upcoming-events {
+    background-color: #fff;
+    border: 2px solid #CDE4FD;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    min-height: 200px; /* Минимальная высота для увеличения */
+}
+
+.upcoming-events h2 {
+    color: #4A90E2;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date {
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.event-name {
+    font-size: 16px;
+}
+
+/* Main event promotion */
+.main-event {
+    grid-column: 1 / 3;
+    background-image: url('./images/friends.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px; /* Увеличение минимальной высоты */
+}
+
+.main-event-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main-event h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main-event p {
+    font-size: 18px;
+}
+
+.create-event-btn {
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Trending posts */
+.trending-posts {
+    background-color: #fff;
+    border: 2px solid #CDE4FD;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 200px; /* Минимальная высота для увеличения */
+}
+
+.trending-posts h2 {
+    color: #4A90E2;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post p {
+    font-size: 14px;
+    color: #333;
+}
