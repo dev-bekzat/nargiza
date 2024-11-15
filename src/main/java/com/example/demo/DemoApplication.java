@@ -13,36 +13,51 @@ public class DemoApplication {
 	}
 
 	@Controller
-	public static class HomeController {
+	public static class PageController {
 
 		@GetMapping("/")
-		public String home() {
-			return "firstpage"; // Главная страница для входа
+		public String showFirstPage() {
+			return "firstpage"; // Начальная страница
 		}
 
 		@GetMapping("/home")
-		public String homePage() {
-			return "home"; // Основная страница SDU Friends
+		public String showHomePage() {
+			return "home"; // Главная страница SDU Friends
 		}
 
 		@GetMapping("/events")
-		public String events() {
-			return "events"; // Страница со списком событий
+		public String showEventsPage() {
+			return "events"; // Страница предстоящих событий
 		}
 
 		@GetMapping("/event-info")
-		public String eventInfo() {
-			return "event-info"; // Страница с подробной информацией о событии
+		public String showEventInfoPage() {
+			return "event-info"; // Информация о событии
 		}
 
 		@GetMapping("/create")
-		public String createEvent() {
-			return "create"; // Страница для создания нового события
+		public String showCreateEventPage() {
+			return "create"; // Страница создания события
+		}
+
+		@GetMapping("/create-post")
+		public String showCreatePostPage() {
+			return "create_post"; // Страница создания поста
 		}
 
 		@GetMapping("/profile")
-		public String profile() {
-			return "htmlthree"; // Профиль пользователя
+		public String showUserProfilePage() {
+			return "user_profile"; // Профиль пользователя
+		}
+
+		@GetMapping("/profile/edit")
+		public String showEditUserProfilePage() {
+			return "user_profile_edit"; // Страница редактирования профиля пользователя
+		}
+
+		@GetMapping("/trending-posts")
+		public String showTrendingPostsPage() {
+			return "index"; // Страница с трендовыми постами
 		}
 	}
 }
