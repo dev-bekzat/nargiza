@@ -1,0 +1,121 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color:#DFF2FE;
+    ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Контейнер для всей страницы */
+  .sign-in-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Левая часть с изображением */
+  .image-section {
+    flex: 1;
+    background-color: #FFFFFF;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+  }
+  
+  /* Правая часть с формой */
+  .form-section {
+    flex: 1;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #4EAFFF;
+    ;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .input-group label {
+    color: #4EAFFF;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .sign-up-button {
+    background-color: #4EAFFF;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sign-up-button:hover {
+    background-color: #3C8FDD;
+  }
+  
+  .sign-in-text {
+    margin-top: 10px;
+    color: #4A4A4A;
+    font-size: 14px;
+  }
+  
+  .sign-in-text a {
+    color: #4EAFFF;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .sign-in-text a:hover {
+    text-decoration: underline;
+  }
+  

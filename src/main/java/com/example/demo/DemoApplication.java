@@ -57,7 +57,17 @@ public class DemoApplication {
 
 		@GetMapping("/trending-posts")
 		public String showTrendingPostsPage() {
-			return "index"; // Страница с трендовыми постами
+			return "trending_posts"; // Страница с трендовыми постами
+		}
+
+		@GetMapping("/sign-in")
+		public String showSignInPage() {
+			return "sign_in"; // Страница авторизации
+		}
+
+		@GetMapping("/post-info")
+		public String showPostInfoPage() {
+			return "post_info"; // Страница информации о посте
 		}
 	}
 }
