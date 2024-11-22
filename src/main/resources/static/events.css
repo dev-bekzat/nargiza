@@ -53,51 +53,63 @@ main {
 /* Grid layout for events */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоматическое подстраивание под ширину контейнера */
+    gap: 20px; /* Расстояние между карточками */
+    margin-top: 20px;
+}
+
+#user-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Компактный вид карточек */
+    gap: 20px; /* Расстояние между карточками */
 }
 
 .event-card {
-    background-color: #CDE4FD;
-    border-radius: 15px;
+    background-color: #f1f8ff;
+    border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     text-align: center;
-    transition: transform 0.2s;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    max-width: 300px; /* Устанавливает максимальную ширину для карточки */
+    margin: 0 auto; /* Центрирует карточку, если меньше ширины сетки */
 }
 
 .event-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
+/* Изображение в карточке */
 .event-image {
     width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    height: 150px;
+    object-fit: cover; /* Обеспечивает обрезку изображения без искажений */
 }
 
+/* Информация внутри карточки */
 .event-info {
     padding: 10px;
 }
 
 .event-info h3 {
+    margin: 0;
     font-size: 18px;
-    font-weight: bold;
     color: #333;
-    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .event-info p {
+    margin: 5px 0 0;
     font-size: 14px;
     color: #666;
 }
 
-.event-card {
-    display: block; /* Убирает подчеркивание и делает карточку кликабельной */
+
+/* Общий стиль для ссылок */
+.event-card a {
     text-decoration: none;
-    color: inherit; /* Сохраняет цвета текста */
+    color: inherit; /* Наследует цвет текста */
 }
