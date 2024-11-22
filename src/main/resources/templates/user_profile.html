@@ -15,7 +15,8 @@
     <section class="profile-header">
         <img src="/images/profile_picture.png" alt="Profile Picture" class="profile-picture">
         <div class="profile-info">
-            <h2>Alex King</h2>
+            <h2 id="user-name">User Name</h2> <!-- Здесь будет имя пользователя -->
+            <p id="user-email">User Email</p> <!-- Здесь будет email пользователя -->
             <!-- Обновленная кнопка -->
             <button class="edit-profile-btn" onclick="window.location.href='/profile/edit'">Edit Profile</button>
         </div>
@@ -71,6 +72,16 @@
         <button class="create-btn">Upcoming Events</button>
     </section>
 </main>
-<script src="/user_profile.js"></script>
+
+<script>
+    // Отображаем данные из sessionStorage
+    document.addEventListener('DOMContentLoaded', function() {
+        const userName = sessionStorage.getItem('userName') || 'User Name';
+        const userEmail = sessionStorage.getItem('userEmail') || 'User Email';
+
+        document.getElementById('user-name').textContent = userName;
+        document.getElementById('user-email').textContent = userEmail;
+    });
+</script>
 </body>
 </html>
