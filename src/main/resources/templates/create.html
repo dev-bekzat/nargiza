@@ -7,42 +7,69 @@
     <link rel="stylesheet" href="/create.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <img src="./images/burger.png" alt="Menu" class="burger-icon">
-            <img src="./images/logo.png" alt="SDU Friends Logo" class="logo">
-        </div>
-    </header>
+<!-- Header -->
+<header>
+    <div class="header-content">
+        <img src="./images/burger.png" alt="Menu" class="burger-icon">
+        <img src="./images/logo.png" alt="SDU Friends Logo" class="logo">
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="form-section">
-            <div class="form-container">
-                <div class="image-upload">
-                    <img src="./images/image.png" alt="Upload Image" class="upload-icon">
-                </div>
+<!-- Main Content -->
+<main>
+    <section class="form-section">
+        <div class="form-container">
+            <div class="image-upload">
+                <img src="./images/image.png" alt="Upload Image" class="upload-icon">
+            </div>
+            <form onsubmit="saveEvent(event)">
                 <div class="form-fields">
                     <div class="form-field">
                         <label for="title">Title</label>
-                        <input type="text" id="title" placeholder="Enter title">
+                        <input type="text" id="title" placeholder="Enter title" required>
                     </div>
                     <div class="form-field">
                         <label for="date">Date</label>
-                        <input type="text" id="date" placeholder="Enter date">
+                        <input type="text" id="date" placeholder="Enter date" required>
                     </div>
                     <div class="form-field">
                         <label for="location">Location</label>
-                        <input type="text" id="location" placeholder="Enter location">
+                        <input type="text" id="location" placeholder="Enter location" required>
                     </div>
                     <div class="form-field">
                         <label for="time">Time</label>
-                        <input type="text" id="time" placeholder="Enter time">
+                        <input type="text" id="time" placeholder="Enter time" required>
                     </div>
-                    <button class="create-button" onclick="window.location.href='/events'">Create</button>
+                    <button type="submit" class="create-button">Create</button>
                 </div>
-            </div>
-        </section>
-    </main>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Массив для хранения событий
+    const events = [];
+
+    // Функция для сохранения события
+    function saveEvent(event) {
+        event.preventDefault(); // Останавливаем стандартное поведение формы
+
+        // Получаем данные из полей формы
+        const title = document.getElementById('title').value;
+        const date = document.getElementById('date').value;
+        const location = document.getElementById('location').value;
+        const time = document.getElementById('time').value;
+
+        // Добавляем событие в массив
+        events.push({ title, date, location, time });
+
+        // Сохраняем данные в sessionStorage (чтобы они сохранялись при переходе между страницами)
+        sessionStorage.setItem('events', JSON.stringify(events));
+
+        // Перенаправляем на страницу /events
+        window.location.href = '/events';
+    }
+</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -68,6 +69,11 @@ public class DemoApplication {
 		@GetMapping("/post-info")
 		public String showPostInfoPage() {
 			return "post_info"; // Страница информации о посте
+		}
+
+		@PostMapping("/sign-up")
+		public String handleSignUp() {
+			return "redirect:/profile"; // Перенаправление на страницу профиля
 		}
 	}
 }
