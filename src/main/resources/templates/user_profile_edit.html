@@ -22,10 +22,10 @@
     <div class="form-container">
       <div class="left-section">
         <label for="first-name">First Name</label>
-        <input type="text" id="first-name" placeholder="">
+        <input type="text" id="first-name" placeholder="Enter your first name">
 
         <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" placeholder="">
+        <input type="text" id="last-name" placeholder="Enter your last name">
       </div>
       <div class="right-section">
         <label for="date-of-birth">Date of Birth</label>
@@ -33,7 +33,7 @@
 
         <label for="major">Major</label>
         <select id="major">
-          <option value=""></option>
+          <option value="">Select Major</option>
           <option value="cs">Computer Science</option>
           <option value="business">Business Administration</option>
           <option value="engineering">Engineering</option>
@@ -41,7 +41,7 @@
 
         <label for="course-number">Course Number</label>
         <select id="course-number">
-          <option value=""></option>
+          <option value="">Select Course</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -49,8 +49,29 @@
         </select>
       </div>
     </div>
-    <button class="edit-button" onclick="window.location.href='/profile'">Save & Back to Profile</button>
+    <button class="edit-button" id="save-profile">Save & Back to Profile</button>
   </div>
 </main>
+
+<script>
+  document.getElementById('save-profile').addEventListener('click', function() {
+    // Получаем значения из полей
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
+    const dateOfBirth = document.getElementById('date-of-birth').value;
+    const major = document.getElementById('major').value;
+    const courseNumber = document.getElementById('course-number').value;
+
+    // Сохраняем в sessionStorage
+    sessionStorage.setItem('firstName', firstName);
+    sessionStorage.setItem('lastName', lastName);
+    sessionStorage.setItem('dateOfBirth', dateOfBirth);
+    sessionStorage.setItem('major', major);
+    sessionStorage.setItem('courseNumber', courseNumber);
+
+    // Перенаправляем на страницу профиля
+    window.location.href = '/profile';
+  });
+</script>
 </body>
 </html>

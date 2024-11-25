@@ -4,9 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
-@SpringBootApplication
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@SpringBootApplication(scanBasePackages = "com.example.demo")
 public class DemoApplication {
 
 	public static void main(String[] args) {
@@ -61,9 +65,14 @@ public class DemoApplication {
 			return "trending_posts"; // Страница с трендовыми постами
 		}
 
+		@GetMapping("/sign-up")
+		public String showSignUpPage() {
+			return "sign_up"; // Страница регистрации
+		}
+
 		@GetMapping("/sign-in")
 		public String showSignInPage() {
-			return "sign_in"; // Страница авторизации
+			return "sign_in"; // Страница регистрации
 		}
 
 		@GetMapping("/post-info")
@@ -71,9 +80,9 @@ public class DemoApplication {
 			return "post_info"; // Страница информации о посте
 		}
 
-		@PostMapping("/sign-up")
-		public String handleSignUp() {
-			return "redirect:/profile"; // Перенаправление на страницу профиля
-		}
+//		@PostMapping("/sign-up")
+//		public String handleSignUp() {
+//			return "redirect:/profile"; // Перенаправление на страницу профиля
+//		}
 	}
 }
