@@ -5,11 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
-
 @SpringBootApplication(scanBasePackages = "com.example.demo")
 public class DemoApplication {
 
@@ -25,10 +20,10 @@ public class DemoApplication {
 			return "firstpage"; // Начальная страница
 		}
 
-		@GetMapping("/home")
-		public String showHomePage() {
-			return "home"; // Главная страница SDU Friends
-		}
+//		@GetMapping("/home")
+//		public String showHomePage() {
+//			return "home"; // Главная страница SDU Friends
+//		}
 
 		@GetMapping("/events")
 		public String showEventsPage() {

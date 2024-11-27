@@ -31,16 +31,40 @@ header {
 }
 
 .login-btn {
-    margin-top: 100px;
-    background-color: #4A90E2;
+    margin-top: 80px;
+    background: linear-gradient(to right, #1e90ff, #87cefa);
     color: #fff;
-    padding: 15px 30px; /* Увеличение размера кнопки */
-    font-size: 18px; /* Увеличенный шрифт */
+    padding: 6px 21px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    right: 145px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, #4682b4, #00bfff);
+    transform: scale(1.05);
+}
+
+.reg-btn {
+    margin-top: 80px;
+    background: linear-gradient(to right, #1e90ff, #87cefa);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 6px 21px;
+    font-size: 18px;
     border: none;
     border-radius: 20px;
     position: absolute;
     right: 20px;
     cursor: pointer;
+}
+
+.reg-btn:hover {
+    background: linear-gradient(to right, #4682b4, #00bfff);
+    transform: scale(1.05);
 }
 
 /* Основной блок с текстом слева и изображением справа */

@@ -1,10 +1,12 @@
 package com.example.demo;
 
-import com.example.demo.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AuthController {
@@ -18,21 +20,20 @@ public class AuthController {
 
         if (!success) {
             model.addAttribute("error", "Email is already taken!");
-            return "sign_in";
-        }
-
-        return "redirect:/home";
-    }
-
-    @PostMapping("/sign-in")
-    public String handleSignIn(@RequestParam String email, @RequestParam String password, Model model) {
-        boolean authenticated = userService.authenticateUser(email, password);
-
-        if (!authenticated) {
-            model.addAttribute("error", "Invalid email or password!");
             return "sign_up";
         }
 
-        return "redirect:/home";
+        return "redirect:/sign-in"; // Перенаправление на страницу входа после успешной регистрации
+    }
+
+    @GetMapping("/home")
+    public String homePage(Authentication authentication, Model model) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/sign-in";
+        }
+
+        String currentUserName = authentication.getName();
+        model.addAttribute("userName", currentUserName);
+        return "home";
     }
 }

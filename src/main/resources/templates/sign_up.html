@@ -18,24 +18,44 @@
     <div class="form-container">
       <img src="/images/sdu_friends_logo.png" alt="SDU Friends Logo" class="logo">
 
-      <form action="/sign-in" method="post">
+      <form action="/sign-up" method="post">
+        <div class="input-group">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
         <div class="input-group">
           <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
         <div class="input-group">
           <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
-        <button type="submit" class="sign-up-button">Sign In</button>
+        <button type="submit" class="sign-up-button">Sign Up</button>
       </form>
 
+      <br>
       <p class="error-message" style="color: red;" th:if="${error} != null" th:text="${error}"></p>
 
       <p class="sign-in-text">
-        Don't have an account? <a href="/sign-in">Sign In</a>
+        Already have an account? <a href="/sign-in">Sign In</a>
       </p>
     </div>
   </div>
 </div>
 
+<script>
+  // Обработчик формы
+  document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Отменяем стандартное поведение формы
+
+    // Сохраняем данные в sessionStorage
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    sessionStorage.setItem('userName', name);
+    sessionStorage.setItem('userEmail', email);
+
+    // Перенаправляем на страницу профиля
+    window.location.href = '/profile';
+  });
+</script>
 </body>
 </html>
