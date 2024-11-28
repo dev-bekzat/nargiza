@@ -1,4 +1,4 @@
-/* Basic reset */
+/* Сброс базовых стилей */
 * {
     margin: 0;
     padding: 0;
@@ -11,105 +11,83 @@ body {
     color: #333;
 }
 
-/* Header styling */
+/* Стили для шапки */
 header {
     background-color: #4A90E2;
-    padding: 15px 0;
-    text-align: center;
-}
-
-.header-content {
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+header .logo {
+    width: 120px;
+    height: auto;
+}
+
 .burger-icon {
-    width: 25px;
+    width: 30px;
     margin-right: 15px;
     cursor: pointer;
 }
 
-.logo {
-    width: 100px;
-    height: auto;
-}
-
-/* Main content styling */
+/* Основной контент */
 main {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Events Section */
 .events-section h2 {
-    color: #4A90E2;
     font-size: 24px;
-    text-align: left;
+    color: #4A90E2;
     margin-bottom: 20px;
 }
 
-/* Grid layout for events */
+/* Сетка карточек */
 .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоматическое подстраивание под ширину контейнера */
-    gap: 20px; /* Расстояние между карточками */
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Разрешает перенос карточек на новую строку */
+    gap: 20px;
+    justify-content: flex-start; /* Располагает карточки слева направо */
 }
 
-#user-events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Компактный вид карточек */
-    gap: 20px; /* Расстояние между карточками */
-}
-
+/* Карточки */
 .event-card {
-    background-color: #f1f8ff;
-    border-radius: 8px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     text-align: center;
-    text-decoration: none;
-    color: #000;
-    display: block;
-    max-width: 300px; /* Устанавливает максимальную ширину для карточки */
-    margin: 0 auto; /* Центрирует карточку, если меньше ширины сетки */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Фиксированная ширина */
 }
 
 .event-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Изображение в карточке */
+/* Изображения */
 .event-image {
     width: 100%;
-    height: 150px;
-    object-fit: cover; /* Обеспечивает обрезку изображения без искажений */
+    height: 180px;
+    object-fit: cover;
 }
 
 /* Информация внутри карточки */
 .event-info {
-    padding: 10px;
+    padding: 15px;
 }
 
 .event-info h3 {
-    margin: 0;
     font-size: 18px;
     color: #333;
-    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .event-info p {
-    margin: 5px 0 0;
     font-size: 14px;
     color: #666;
-}
-
-
-/* Общий стиль для ссылок */
-.event-card a {
-    text-decoration: none;
-    color: inherit; /* Наследует цвет текста */
+    margin-bottom: 5px;
 }

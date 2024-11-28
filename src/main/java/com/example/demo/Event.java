@@ -27,6 +27,8 @@ public class Event {
     @Column(nullable = false)
     private LocalTime time;
 
+    private String imagePath; // Убедитесь, что поле объявлено
+
     // Геттеры и сеттеры
     public Long getId() {
         return id;
@@ -74,5 +76,13 @@ public class Event {
 
     public void setTime(LocalTime time) {
         this.time = time;
+    }
+
+    public String getImagePath() { // Обязательно добавьте геттер
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) { // И сеттер
+        this.imagePath = imagePath;
     }
 }

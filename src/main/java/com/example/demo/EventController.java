@@ -40,12 +40,40 @@ public class EventController {
 
     @GetMapping("/events")
     public String showEventsPage(Authentication authentication, Model model) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/sign-in"; // Перенаправить на страницу входа
+        }
+
         String email = authentication.getName();
         User user = userService.findByEmail(email);
 
-        List<Event> events = eventService.getEventsByUserId(user.getId());
-        model.addAttribute("events", events);
+        List<Event> userEvents = eventService.getEventsByUserId(user.getId()); // События пользователя
+
+        model.addAttribute("userEvents", userEvents); // Ваши события
 
         return "events";
+    }
+
+    @GetMapping("/event-info")
+    public String showEventDetails(@RequestParam("id") Long eventId, Authentication authentication, Model model) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/sign-in";
+        }
+
+        String email = authentication.getName();
+        User user = userService.findByEmail(email);
+
+        Event event = eventService.getEventById(eventId);
+        if (event == null) {
+            throw new IllegalArgumentException("Event not found");
+        }
+
+        model.addAttribute("event", event);
+        return "event-info";
+    }
+
+    @GetMapping("/access-denied")
+    public String accessDeniedPage() {
+        return "access-denied";
     }
 }

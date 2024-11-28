@@ -6,8 +6,7 @@
     <title>SDU Friends - Events</title>
     <link rel="stylesheet" href="/events.css">
 </head>
-<body onload="displayEvents()"> <!-- Вызываем displayEvents при загрузке страницы -->
-<!-- Header -->
+<body>
 <header>
     <div class="header-content">
         <img src="./images/burger.png" alt="Menu" class="burger-icon">
@@ -15,88 +14,69 @@
     </div>
 </header>
 
-<!-- Main Content -->
 <main>
     <section class="events-section">
         <h2>Upcoming Events</h2>
         <div class="events-grid">
             <!-- Примерочные карточки -->
-            <a href="/event-info" class="event-card">
-                <div class="event-card">
-                    <img src="./images/concert.png" alt="Concert" class="event-image">
-                    <div class="event-info">
-                        <h3>Concert</h3>
-                        <p>27.10.24</p>
-                    </div>
+            <div class="event-card">
+                <img src="./images/concert.png" alt="Concert" class="event-image">
+                <div class="event-info">
+                    <h3>Concert</h3>
+                    <p>Date: 27.10.24</p>
+                    <p>Time: 18:00</p>
+                    <p>Location: Central Park</p>
                 </div>
-            </a>
-            <a href="/event-info" class="event-card">
-                <div class="event-card">
-                    <img src="./images/mountains.png" alt="Mountain" class="event-image">
-                    <div class="event-info">
-                        <h3>Mountain</h3>
-                        <p>31.10.24</p>
-                    </div>
+            </div>
+            <div class="event-card">
+                <img src="./images/mountains.png" alt="Mountain" class="event-image">
+                <div class="event-info">
+                    <h3>Mountain</h3>
+                    <p>Date: 31.10.24</p>
+                    <p>Time: 08:00</p>
+                    <p>Location: Rockies</p>
                 </div>
-            </a>
-            <a href="/event-info" class="event-card">
-                <div class="event-card">
-                    <img src="./images/movie.png" alt="Movie" class="event-image">
-                    <div class="event-info">
-                        <h3>Movie</h3>
-                        <p>27.10.24</p>
-                    </div>
+            </div>
+            <div class="event-card">
+                <img src="./images/movie.png" alt="Movie Night" class="event-image">
+                <div class="event-info">
+                    <h3>Movie Night</h3>
+                    <p>Date: 27.10.24</p>
+                    <p>Time: 21:00</p>
+                    <p>Location: SDU Hall</p>
                 </div>
-            </a>
+            </div>
         </div>
 
         <br>
 
+        <h2>Your Events</h2>
+<!--        <div class="events-grid">-->
+<!--            &lt;!&ndash; Динамически добавляемые карточки &ndash;&gt;-->
+<!--            <div th:each="event : ${events}" class="event-card">-->
+<!--                <img src="./images/beach.jpg" alt="Event Image" class="event-image">-->
+<!--                <div class="event-info">-->
+<!--                    <h3 th:text="${event.title}">Event Title</h3>-->
+<!--                    <p>Date: <span th:text="${event.date}"></span></p>-->
+<!--                    <p>Time: <span th:text="${event.time}"></span></p>-->
+<!--                    <p>Location: <span th:text="${event.location}"></span></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
         <div class="events-grid">
-            <h2>Your Events</h2>
-            <div th:each="event : ${events}" class="event-card">
-                <h3 th:text="${event.title}">Event Title</h3>
-                <p>Date: <span th:text="${event.date}"></span></p>
-                <p>Location: <span th:text="${event.location}"></span></p>
-                <p>Time: <span th:text="${event.time}"></span></p>
-            </div>
+            <a th:href="@{/event-info(id=${event.id})}" class="event-card" th:each="event : ${userEvents}">
+                <img src="./images/beach.jpg" alt="Event Image" class="event-image">
+                <div class="event-info">
+                    <h3 th:text="${event.title}">Event Title</h3>
+                    <p>Date: <span th:text="${event.date}"></span></p>
+                    <p>Time: <span th:text="${event.time}"></span></p>
+                    <p>Location: <span th:text="${event.location}"></span></p>
+                </div>
+            </a>
         </div>
 
     </section>
-
-<!--    <script>-->
-<!--        function displayUserEvents() {-->
-<!--            const userEventsGrid = document.getElementById('user-events-grid');-->
-
-<!--            // Получаем сохраненные события из sessionStorage-->
-<!--            const savedEvents = JSON.parse(sessionStorage.getItem('events')) || [];-->
-
-<!--            // Очищаем блок перед добавлением новых карточек-->
-<!--            userEventsGrid.innerHTML = '';-->
-
-<!--            // Добавляем карточки событий-->
-<!--            savedEvents.forEach(event => {-->
-<!--                const eventCard = document.createElement('a');-->
-<!--                eventCard.classList.add('event-card');-->
-<!--                eventCard.href = '/event-info';-->
-
-<!--                eventCard.innerHTML = `-->
-<!--                <div class="event-card">-->
-<!--                    <img src="./images/movie.png" alt="${event.title}" class="event-image">-->
-<!--                    <div class="event-info">-->
-<!--                        <h3>${event.title}</h3>-->
-<!--                        <p>${event.date}</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            `;-->
-
-<!--                userEventsGrid.appendChild(eventCard);-->
-<!--            });-->
-<!--        }-->
-
-<!--        // Вызываем функцию отображения при загрузке страницы-->
-<!--        window.onload = displayUserEvents;-->
-<!--    </script>-->
 </main>
 </body>
 </html>

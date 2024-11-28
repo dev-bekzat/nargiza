@@ -30,10 +30,10 @@ public class DemoApplication {
 //			return "events"; // Страница предстоящих событий
 //		}
 
-		@GetMapping("/event-info")
-		public String showEventInfoPage() {
-			return "event-info"; // Информация о событии
-		}
+//		@GetMapping("/event-info")
+//		public String showEventInfoPage() {
+//			return "event-info"; // Информация о событии
+//		}
 
 //		@GetMapping("/create")
 //		public String showCreateEventPage() {

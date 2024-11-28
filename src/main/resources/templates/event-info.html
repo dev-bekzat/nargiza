@@ -7,39 +7,39 @@
     <link rel="stylesheet" href="/event-info.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <img src="./images/burger.png" alt="Menu" class="burger-icon">
-            <img src="./images/logo.png" alt="SDU Friends Logo" class="logo">
-        </div>
-    </header>
+<!-- Header -->
+<header>
+    <div class="header-content">
+        <img src="./images/burger.png" alt="Menu" class="burger-icon">
+        <img src="./images/logo.png" alt="SDU Friends Logo" class="logo">
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="event-section">
-            <div class="event-container">
-                <div class="image-display">
-                    <img src="./images/concert.png" alt="Concert" class="event-image">
-                    <p class="event-title">concert</p>
-                </div>
-                <div class="event-details">
-                    <div class="event-field">
-                        <label for="date">Date</label>
-                        <input type="text" id="date" value="12.01.24" readonly>
-                    </div>
-                    <div class="event-field">
-                        <label for="location">Location</label>
-                        <input type="text" id="location" value="sdu" readonly>
-                    </div>
-                    <div class="event-field">
-                        <label for="time">Time</label>
-                        <input type="text" id="time" value="12:30" readonly>
-                    </div>
-                    <button class="join-button">Join</button>
-                </div>
+<!-- Main Content -->
+<main>
+    <section class="event-section">
+        <div class="event-container">
+            <div class="image-display">
+                <img th:src="@{${event.imagePath}}" alt="Event Image" class="event-image">
+                <p class="event-title" th:text="${event.title}">Event Title</p>
             </div>
-        </section>
-    </main>
+            <div class="event-details">
+                <div class="event-field">
+                    <label for="date">Date</label>
+                    <input type="text" id="date" th:value="${event.date}" readonly>
+                </div>
+                <div class="event-field">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" th:value="${event.location}" readonly>
+                </div>
+                <div class="event-field">
+                    <label for="time">Time</label>
+                    <input type="text" id="time" th:value="${event.time}" readonly>
+                </div>
+                <button class="join-button">Join</button>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>

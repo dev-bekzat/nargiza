@@ -20,11 +20,17 @@ public class EventService {
         event.setDate(date);
         event.setLocation(location);
         event.setTime(time);
+        event.setImagePath("./images/beach.jpg");
 
         eventRepository.save(event);
     }
 
     public List<Event> getEventsByUserId(Long userId) {
         return eventRepository.findByUserId(userId);
+    }
+
+    public Event getEventById(Long id) {
+        return eventRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Event not found"));
     }
 }
