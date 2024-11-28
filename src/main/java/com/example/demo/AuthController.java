@@ -32,8 +32,16 @@ public class AuthController {
             return "redirect:/sign-in";
         }
 
-        String currentUserName = authentication.getName();
-        model.addAttribute("userName", currentUserName);
+        String currentUserEmail = authentication.getName();
+
+        User currentUser = userService.findByEmail(currentUserEmail);
+
+        if (currentUser != null) {
+            model.addAttribute("name", currentUser.getName());
+        } else {
+            model.addAttribute("name", "User");
+        }
+
         return "home";
     }
 }

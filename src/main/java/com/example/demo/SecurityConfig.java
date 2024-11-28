@@ -25,7 +25,8 @@ public class SecurityConfig {
                         .permitAll()
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/logout") // URL для выхода
+                        .logoutUrl("/logout")
+                        .deleteCookies("JSESSIONID")
                         .logoutSuccessUrl("/sign-in") // Куда перенаправлять после выхода
                         .permitAll()
                 )

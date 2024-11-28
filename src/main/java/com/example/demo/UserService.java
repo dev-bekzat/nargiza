@@ -34,6 +34,10 @@ public class UserService implements UserDetailsService {
         return true;
     }
 
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElse(null); // Ищем пользователя или возвращаем null
+    }
+
     // Загрузка пользователя для Spring Security
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

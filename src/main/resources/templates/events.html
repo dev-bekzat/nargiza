@@ -52,84 +52,51 @@
 
         <br>
 
-        <!-- Раздел для динамически добавляемых карточек -->
-        <h2>Your Events</h2>
-
-        <br>
-
-        <div class="events-grid" id="user-events-grid">
-            <!-- Динамические карточки будут добавляться сюда -->
+        <div class="events-grid">
+            <h2>Your Events</h2>
+            <div th:each="event : ${events}" class="event-card">
+                <h3 th:text="${event.title}">Event Title</h3>
+                <p>Date: <span th:text="${event.date}"></span></p>
+                <p>Location: <span th:text="${event.location}"></span></p>
+                <p>Time: <span th:text="${event.time}"></span></p>
+            </div>
         </div>
+
     </section>
 
-    <script>
-        function displayUserEvents() {
-            const userEventsGrid = document.getElementById('user-events-grid');
+<!--    <script>-->
+<!--        function displayUserEvents() {-->
+<!--            const userEventsGrid = document.getElementById('user-events-grid');-->
 
-            // Получаем сохраненные события из sessionStorage
-            const savedEvents = JSON.parse(sessionStorage.getItem('events')) || [];
+<!--            // Получаем сохраненные события из sessionStorage-->
+<!--            const savedEvents = JSON.parse(sessionStorage.getItem('events')) || [];-->
 
-            // Очищаем блок перед добавлением новых карточек
-            userEventsGrid.innerHTML = '';
+<!--            // Очищаем блок перед добавлением новых карточек-->
+<!--            userEventsGrid.innerHTML = '';-->
 
-            // Добавляем карточки событий
-            savedEvents.forEach(event => {
-                const eventCard = document.createElement('a');
-                eventCard.classList.add('event-card');
-                eventCard.href = '/event-info';
+<!--            // Добавляем карточки событий-->
+<!--            savedEvents.forEach(event => {-->
+<!--                const eventCard = document.createElement('a');-->
+<!--                eventCard.classList.add('event-card');-->
+<!--                eventCard.href = '/event-info';-->
 
-                eventCard.innerHTML = `
-                <div class="event-card">
-                    <img src="./images/movie.png" alt="${event.title}" class="event-image">
-                    <div class="event-info">
-                        <h3>${event.title}</h3>
-                        <p>${event.date}</p>
-                    </div>
-                </div>
-            `;
+<!--                eventCard.innerHTML = `-->
+<!--                <div class="event-card">-->
+<!--                    <img src="./images/movie.png" alt="${event.title}" class="event-image">-->
+<!--                    <div class="event-info">-->
+<!--                        <h3>${event.title}</h3>-->
+<!--                        <p>${event.date}</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            `;-->
 
-                userEventsGrid.appendChild(eventCard);
-            });
-        }
+<!--                userEventsGrid.appendChild(eventCard);-->
+<!--            });-->
+<!--        }-->
 
-        // Вызываем функцию отображения при загрузке страницы
-        window.onload = displayUserEvents;
-    </script>
+<!--        // Вызываем функцию отображения при загрузке страницы-->
+<!--        window.onload = displayUserEvents;-->
+<!--    </script>-->
 </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
