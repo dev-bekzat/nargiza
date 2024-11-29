@@ -22,7 +22,6 @@ body {
 }
 
 /* Логотип */
-/* Логотип */
 .logo img {
     height: 40px; /* Размер логотипа */
     cursor: pointer;
@@ -62,6 +61,11 @@ body {
 .menu ul li a:hover {
     color: #FFD700; /* Цвет при наведении */
     border-bottom: 2px solid #FFD700; /* Подчеркивание при наведении */
+}
+
+.nav-link.active {
+    color: #FFD700; /* Золотой цвет для активной ссылки */
+    border-bottom: 2px solid #FFD700; /* Подчеркивание активной ссылки */
 }
 
 /* Шапка */

@@ -49,6 +49,11 @@ body {
     display: inline;
 }
 
+.nav-link.active {
+    color: #FFD700; /* Золотой цвет для активной ссылки */
+    border-bottom: 2px solid #FFD700; /* Подчеркивание активной ссылки */
+}
+
 .menu ul li a {
     text-decoration: none; /* Убираем подчеркивание */
     color: white; /* Цвет текста */

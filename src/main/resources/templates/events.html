@@ -16,10 +16,10 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/home" class="nav-link">Home</a></li>
+                <li><a href="/events" class="nav-link">Events</a></li>
+                <li><a href="/profile" class="nav-link">Profile</a></li>
+                <li><a href="/logout" class="nav-link">Logout</a></li>
             </ul>
         </nav>
     </div>
@@ -91,3 +91,18 @@
 </main>
 </body>
 </html>
+
+<script>
+    // Получаем текущий путь
+    const currentPath = window.location.pathname;
+
+    // Находим все ссылки с классом 'nav-link'
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Итерируем по ссылкам и добавляем класс 'active' к той, что совпадает с текущим путем
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
