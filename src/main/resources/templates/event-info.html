@@ -36,10 +36,28 @@
                     <label for="time">Time</label>
                     <input type="text" id="time" th:value="${event.time}" readonly>
                 </div>
-                <button class="join-button">Join</button>
+                <button class="join-button" id="joinButton">Join</button>
             </div>
         </div>
     </section>
 </main>
+
+<script>
+    // Добавляем событие на кнопку "Join"
+    document.getElementById('joinButton').addEventListener('click', function() {
+        // Получаем данные события
+        const eventTitle = document.querySelector('.event-title').innerText;
+
+        // Сохраняем событие в localStorage
+        const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];
+        if (!joinedEvents.includes(eventTitle)) {
+            joinedEvents.push(eventTitle);
+        }
+        localStorage.setItem('joinedEvents', JSON.stringify(joinedEvents));
+
+        // Перенаправляем обратно на страницу /events
+        window.location.href = '/events';
+    });
+</script>
 </body>
 </html>

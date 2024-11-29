@@ -29,11 +29,11 @@
     <section class="events-section">
         <h2>Upcoming Events</h2>
         <div class="events-grid">
-            <!-- Примерочные карточки -->
+            <!-- Статичные карточки -->
             <div class="event-card">
                 <img src="./images/concert.png" alt="Concert" class="event-image">
                 <div class="event-info">
-                    <h3>Concert</h3>
+                    <h3 class="event-title">Concert</h3>
                     <p>Date: 27.10.24</p>
                     <p>Time: 18:00</p>
                     <p>Location: Central Park</p>
@@ -42,7 +42,7 @@
             <div class="event-card">
                 <img src="./images/mountains.png" alt="Mountain" class="event-image">
                 <div class="event-info">
-                    <h3>Mountain</h3>
+                    <h3 class="event-title">Mountain</h3>
                     <p>Date: 31.10.24</p>
                     <p>Time: 08:00</p>
                     <p>Location: Rockies</p>
@@ -51,7 +51,7 @@
             <div class="event-card">
                 <img src="./images/movie.png" alt="Movie Night" class="event-image">
                 <div class="event-info">
-                    <h3>Movie Night</h3>
+                    <h3 class="event-title">Movie Night</h3>
                     <p>Date: 27.10.24</p>
                     <p>Time: 21:00</p>
                     <p>Location: SDU Hall</p>
@@ -62,47 +62,68 @@
         <br>
 
         <h2>Your Events</h2>
-<!--        <div class="events-grid">-->
-<!--            &lt;!&ndash; Динамически добавляемые карточки &ndash;&gt;-->
-<!--            <div th:each="event : ${events}" class="event-card">-->
-<!--                <img src="./images/beach.jpg" alt="Event Image" class="event-image">-->
-<!--                <div class="event-info">-->
-<!--                    <h3 th:text="${event.title}">Event Title</h3>-->
-<!--                    <p>Date: <span th:text="${event.date}"></span></p>-->
-<!--                    <p>Time: <span th:text="${event.time}"></span></p>-->
-<!--                    <p>Location: <span th:text="${event.location}"></span></p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
 
+        <!-- Динамически рендеренные карточки из userEvents -->
         <div class="events-grid">
             <a th:href="@{/event-info(id=${event.id})}" class="event-card" style="text-decoration: none" th:each="event : ${userEvents}">
-                <img src="./images/beach.jpg" alt="Event Image" class="event-image">
+                <img th:src="@{${event.imagePath}}" alt="Event Image" class="event-image">
                 <div class="event-info">
-                    <h3 th:text="${event.title}">Event Title</h3>
+                    <h3 class="event-title" th:text="${event.title}">Event Title</h3>
                     <p>Date: <span th:text="${event.date}"></span></p>
                     <p>Time: <span th:text="${event.time}"></span></p>
                     <p>Location: <span th:text="${event.location}"></span></p>
                 </div>
             </a>
         </div>
-
     </section>
 </main>
-</body>
-</html>
 
 <script>
-    // Получаем текущий путь
+    // Получаем список отмеченных событий из localStorage
+    const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];
+    console.log('Joined Events:', joinedEvents);
+
+    // Обрабатываем как статичные карточки, так и динамические
+    const eventCards = document.querySelectorAll('.event-card');
+
+    eventCards.forEach(card => {
+        // Ищем заголовок события
+        const eventTitleElement = card.querySelector('.event-title');
+        if (!eventTitleElement) {
+            console.warn('Event title not found in card:', card);
+            return; // Пропускаем, если заголовок отсутствует
+        }
+
+        const eventTitle = eventTitleElement.innerText;
+
+        // Если событие есть в joinedEvents, помечаем его
+        if (joinedEvents.includes(eventTitle)) {
+            card.classList.add('joined');
+            console.log(`Event "${eventTitle}" marked as joined.`);
+        }
+    });
+
+    // Выделение активной ссылки навигации
     const currentPath = window.location.pathname;
-
-    // Находим все ссылки с классом 'nav-link'
     const navLinks = document.querySelectorAll('.nav-link');
-
-    // Итерируем по ссылкам и добавляем класс 'active' к той, что совпадает с текущим путем
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         }
     });
 </script>
+
+<style>
+    /* Стили для помеченных событий */
+    .event-card.joined {
+        border: 3px solid #FFD700; /* Золотистая рамка */
+        background-color: #FFF8DC; /* Светло-золотистый фон */
+    }
+
+    /* Стили для активной ссылки */
+    .nav-link.active {
+        color: #FFD700;
+        border-bottom: 2px solid #FFD700;
+    }
+</style>
+
