@@ -8,9 +8,20 @@
 </head>
 <body>
 <header>
-    <div class="header-content">
-        <img src="./images/burger.png" alt="Menu" class="burger-icon">
-        <img src="./images/logo.png" alt="SDU Friends Logo" class="logo">
+    <div class="navbar">
+        <div class="logo">
+            <a href="/home">
+                <img src="/images/logo.png" alt="SDU Friends Logo">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -65,7 +76,7 @@
 <!--        </div>-->
 
         <div class="events-grid">
-            <a th:href="@{/event-info(id=${event.id})}" class="event-card" th:each="event : ${userEvents}">
+            <a th:href="@{/event-info(id=${event.id})}" class="event-card" style="text-decoration: none" th:each="event : ${userEvents}">
                 <img src="./images/beach.jpg" alt="Event Image" class="event-image">
                 <div class="event-info">
                     <h3 th:text="${event.title}">Event Title</h3>

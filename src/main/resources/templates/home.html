@@ -7,21 +7,26 @@
     <link rel="stylesheet" href="/home.css">
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <img src="/images/burger.png" alt="Menu" class="burger-icon">
-            <img src="/images/logowhite.png" alt="SDU Friends Logo" class="logo">
-            <span class="home-link">HOME</span>
-        </div>
-        <div class="header-right">
-            <img src="/images/bell.png" alt="Notifications" class="icon">
-            <img src="/images/user.png" alt="User Profile" class="profile-pic">
-        </div>
 
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/home">
+                    <img src="/images/logo.png" alt="SDU Friends Logo">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="welcome-container">
             <h3>Welcome, <span th:text="${name}">User</span></h3>
         </div>
-
     </header>
 
     <main class="main-content">
