@@ -20,6 +20,10 @@ public class UserService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     // Регистрация нового пользователя
     public boolean registerUser(String name, String email, String password) {
         if (userRepository.findByEmail(email).isPresent()) {
@@ -55,5 +59,9 @@ public class UserService implements UserDetailsService {
                 .password(foundUser.getPassword())
                 .roles("USER") // Указываем роль пользователя
                 .build();
+    }
+
+    public void save(User user) {
+        userRepository.save(user);
     }
 }

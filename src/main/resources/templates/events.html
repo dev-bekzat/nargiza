@@ -79,31 +79,25 @@
 </main>
 
 <script>
-    // Получаем список отмеченных событий из localStorage
     const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];
     console.log('Joined Events:', joinedEvents);
 
-    // Обрабатываем как статичные карточки, так и динамические
     const eventCards = document.querySelectorAll('.event-card');
 
     eventCards.forEach(card => {
-        // Ищем заголовок события
         const eventTitleElement = card.querySelector('.event-title');
         if (!eventTitleElement) {
             console.warn('Event title not found in card:', card);
-            return; // Пропускаем, если заголовок отсутствует
         }
 
         const eventTitle = eventTitleElement.innerText;
 
-        // Если событие есть в joinedEvents, помечаем его
         if (joinedEvents.includes(eventTitle)) {
             card.classList.add('joined');
             console.log(`Event "${eventTitle}" marked as joined.`);
         }
     });
 
-    // Выделение активной ссылки навигации
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -114,13 +108,11 @@
 </script>
 
 <style>
-    /* Стили для помеченных событий */
     .event-card.joined {
-        border: 3px solid #FFD700; /* Золотистая рамка */
-        background-color: #FFF8DC; /* Светло-золотистый фон */
+        border: 3px solid #FFD700;
+        background-color: #FFF8DC;
     }
 
-    /* Стили для активной ссылки */
     .nav-link.active {
         color: #FFD700;
         border-bottom: 2px solid #FFD700;

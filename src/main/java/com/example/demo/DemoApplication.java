@@ -55,15 +55,15 @@ public class DemoApplication {
 			return "post_info"; // Страница информации о посте
 		}
 
-		@GetMapping("/profile")
-		public String showUserProfilePage() {
-			return "user_profile"; // Профиль пользователя
-		}
+//		@GetMapping("/profile")
+//		public String showUserProfilePage() {
+//			return "user_profile"; // Профиль пользователя
+//		}
 
-		@GetMapping("/profile/edit")
-		public String showEditUserProfilePage() {
-			return "user_profile_edit"; // Страница редактирования профиля пользователя
-		}
+//		@GetMapping("/profile/edit")
+//		public String showEditUserProfilePage() {
+//			return "user_profile_edit"; // Страница редактирования профиля пользователя
+//		}
 
 		@GetMapping("/sign-up")
 		public String showSignUpPage() {

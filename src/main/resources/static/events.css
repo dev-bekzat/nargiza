@@ -1,4 +1,3 @@
-/* Сброс базовых стилей */
 * {
     margin: 0;
     padding: 0;
@@ -103,8 +102,6 @@ header {
     }
 }
 
-
-/* Основной контент */
 main {
     padding: 20px;
     max-width: 1200px;

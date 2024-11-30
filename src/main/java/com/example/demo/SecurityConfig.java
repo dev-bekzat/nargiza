@@ -15,7 +15,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/sign-in", "/sign-up", "/**", "/images/**").permitAll()// Разрешенные пути
-                        .requestMatchers("/events", "/event-info/**", "/event-info", "/create").authenticated()
+                        .requestMatchers("/events", "/event-info/**", "/event-info", "/create", "/profile", "/profile/edit").authenticated()
                         .anyRequest().authenticated() // Все остальные требуют авторизации
                 )
                 .formLogin(form -> form
