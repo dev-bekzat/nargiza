@@ -36,28 +36,49 @@
                     <label for="time">Time</label>
                     <input type="text" id="time" th:value="${event.time}" readonly>
                 </div>
-                <button class="join-button" id="joinButton">Join</button>
+                <form action="/event/join" method="post">
+                    <input type="hidden" name="eventId" th:value="${event.id}">
+                    <button class="join-button" type="submit">Join</button>
+                </form>
             </div>
         </div>
     </section>
+    <section class="participants">
+        <h3>Participants</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Joined At</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="participant : ${formattedParticipants}">
+                <td th:text="${participant.key}"></td>
+                <td th:text="${participant.value}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
 </main>
 
-<script>
-    // Добавляем событие на кнопку "Join"
-    document.getElementById('joinButton').addEventListener('click', function() {
-        // Получаем данные события
-        const eventTitle = document.querySelector('.event-title').innerText;
+<!--<script>-->
+<!--    // Добавляем событие на кнопку "Join"-->
+<!--    document.getElementById('joinButton').addEventListener('click', function() {-->
+<!--        // Получаем данные события-->
+<!--        const eventTitle = document.querySelector('.event-title').innerText;-->
 
-        // Сохраняем событие в localStorage
-        const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];
-        if (!joinedEvents.includes(eventTitle)) {
-            joinedEvents.push(eventTitle);
-        }
-        localStorage.setItem('joinedEvents', JSON.stringify(joinedEvents));
+<!--        // Сохраняем событие в localStorage-->
+<!--        const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];-->
+<!--        if (!joinedEvents.includes(eventTitle)) {-->
+<!--            joinedEvents.push(eventTitle);-->
+<!--        }-->
+<!--        localStorage.setItem('joinedEvents', JSON.stringify(joinedEvents));-->
 
-        // Перенаправляем обратно на страницу /events
-        window.location.href = '/events';
-    });
-</script>
+<!--        // Перенаправляем обратно на страницу /events-->
+<!--        window.location.href = '/events';-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

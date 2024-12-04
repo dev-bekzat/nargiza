@@ -72,50 +72,51 @@
                     <p>Date: <span th:text="${event.date}"></span></p>
                     <p>Time: <span th:text="${event.time}"></span></p>
                     <p>Location: <span th:text="${event.location}"></span></p>
+                    <p>Participants: <span th:text="${event.participants.size()}">0</span></p>
                 </div>
             </a>
         </div>
     </section>
 </main>
 
-<script>
-    const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];
-    console.log('Joined Events:', joinedEvents);
+<!--<script>-->
+<!--    const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];-->
+<!--    console.log('Joined Events:', joinedEvents);-->
 
-    const eventCards = document.querySelectorAll('.event-card');
+<!--    const eventCards = document.querySelectorAll('.event-card');-->
 
-    eventCards.forEach(card => {
-        const eventTitleElement = card.querySelector('.event-title');
-        if (!eventTitleElement) {
-            console.warn('Event title not found in card:', card);
-        }
+<!--    eventCards.forEach(card => {-->
+<!--        const eventTitleElement = card.querySelector('.event-title');-->
+<!--        if (!eventTitleElement) {-->
+<!--            console.warn('Event title not found in card:', card);-->
+<!--        }-->
 
-        const eventTitle = eventTitleElement.innerText;
+<!--        const eventTitle = eventTitleElement.innerText;-->
 
-        if (joinedEvents.includes(eventTitle)) {
-            card.classList.add('joined');
-            console.log(`Event "${eventTitle}" marked as joined.`);
-        }
-    });
+<!--        if (joinedEvents.includes(eventTitle)) {-->
+<!--            card.classList.add('joined');-->
+<!--            console.log(`Event "${eventTitle}" marked as joined.`);-->
+<!--        }-->
+<!--    });-->
 
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
-    });
-</script>
+<!--    const currentPath = window.location.pathname;-->
+<!--    const navLinks = document.querySelectorAll('.nav-link');-->
+<!--    navLinks.forEach(link => {-->
+<!--        if (link.getAttribute('href') === currentPath) {-->
+<!--            link.classList.add('active');-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
 
-<style>
-    .event-card.joined {
-        border: 3px solid #FFD700;
-        background-color: #FFF8DC;
-    }
+<!--<style>-->
+<!--    .event-card.joined {-->
+<!--        border: 3px solid #FFD700;-->
+<!--        background-color: #FFF8DC;-->
+<!--    }-->
 
-    .nav-link.active {
-        color: #FFD700;
-        border-bottom: 2px solid #FFD700;
-    }
-</style>
+<!--    .nav-link.active {-->
+<!--        color: #FFD700;-->
+<!--        border-bottom: 2px solid #FFD700;-->
+<!--    }-->
+<!--</style>-->
 

@@ -2,7 +2,12 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "events")
@@ -84,5 +89,29 @@ public class Event {
 
     public void setImagePath(String imagePath) { // И сеттер
         this.imagePath = imagePath;
+    }
+
+    @ElementCollection
+    @CollectionTable(name = "event_participants", joinColumns = @JoinColumn(name = "event_id"))
+    @MapKeyColumn(name = "participant_id") // Колонка для ID участника
+    @Column(name = "joined_at") // Колонка для времени
+    private Map<Long, LocalDateTime> participants = new HashMap<>();
+
+    public Map<Long, LocalDateTime> getParticipants() {
+        return participants; // Возвращаем карту участников
+    }
+
+    public List<Long> getParticipantIds() {
+        return new ArrayList<>(participants.keySet());
+    }
+
+    public void setParticipants(Map<Long, LocalDateTime> participants) {
+        this.participants = participants;
+    }
+
+    public void addParticipant(Long userId) {
+        if (!participants.containsKey(userId)) {
+            participants.put(userId, LocalDateTime.now()); // Добавляем текущую дату и время
+        }
     }
 }
