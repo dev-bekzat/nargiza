@@ -63,7 +63,6 @@
 
         <h2>Your Events</h2>
 
-        <!-- Динамически рендеренные карточки из userEvents -->
         <div class="events-grid">
             <a th:href="@{/event-info(id=${event.id})}" class="event-card" style="text-decoration: none" th:each="event : ${userEvents}">
                 <img th:src="@{${event.imagePath}}" alt="Event Image" class="event-image">
@@ -78,45 +77,3 @@
         </div>
     </section>
 </main>
-
-<!--<script>-->
-<!--    const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];-->
-<!--    console.log('Joined Events:', joinedEvents);-->
-
-<!--    const eventCards = document.querySelectorAll('.event-card');-->
-
-<!--    eventCards.forEach(card => {-->
-<!--        const eventTitleElement = card.querySelector('.event-title');-->
-<!--        if (!eventTitleElement) {-->
-<!--            console.warn('Event title not found in card:', card);-->
-<!--        }-->
-
-<!--        const eventTitle = eventTitleElement.innerText;-->
-
-<!--        if (joinedEvents.includes(eventTitle)) {-->
-<!--            card.classList.add('joined');-->
-<!--            console.log(`Event "${eventTitle}" marked as joined.`);-->
-<!--        }-->
-<!--    });-->
-
-<!--    const currentPath = window.location.pathname;-->
-<!--    const navLinks = document.querySelectorAll('.nav-link');-->
-<!--    navLinks.forEach(link => {-->
-<!--        if (link.getAttribute('href') === currentPath) {-->
-<!--            link.classList.add('active');-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-
-<!--<style>-->
-<!--    .event-card.joined {-->
-<!--        border: 3px solid #FFD700;-->
-<!--        background-color: #FFF8DC;-->
-<!--    }-->
-
-<!--    .nav-link.active {-->
-<!--        color: #FFD700;-->
-<!--        border-bottom: 2px solid #FFD700;-->
-<!--    }-->
-<!--</style>-->
-

@@ -75,13 +75,8 @@
 </html>
 
 <script>
-    // Получаем текущий путь
     const currentPath = window.location.pathname;
-
-    // Находим все ссылки с классом 'nav-link'
     const navLinks = document.querySelectorAll('.nav-link');
-
-    // Итерируем по ссылкам и добавляем класс 'active' к той, что совпадает с текущим путем
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');

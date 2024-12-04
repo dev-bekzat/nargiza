@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/event-info.css">
 </head>
 <body>
-<!-- Header -->
 <header>
     <div class="header-content">
         <img src="./images/burger.png" alt="Menu" class="burger-icon">
@@ -15,7 +14,6 @@
     </div>
 </header>
 
-<!-- Main Content -->
 <main>
     <section class="event-section">
         <div class="event-container">
@@ -36,49 +34,27 @@
                     <label for="time">Time</label>
                     <input type="text" id="time" th:value="${event.time}" readonly>
                 </div>
-                <form action="/event/join" method="post">
-                    <input type="hidden" name="eventId" th:value="${event.id}">
-                    <button class="join-button" type="submit">Join</button>
-                </form>
+
+                <div class="participants">
+                    <h3>Participants</h3>
+                    <div class="participant" th:each="participant : ${participants}">
+                        <div class="event-field">
+                            <label for="participant-id">User ID</label>
+                            <input type="text" id="participant-id" th:value="${participant['id']}" readonly>
+                        </div>
+                        <div class="event-field">
+                            <label for="participant-name">Name</label>
+                            <input type="text" id="participant-name" th:value="${participant['name']}" readonly>
+                        </div>
+                        <div class="event-field">
+                            <label for="participant-joined">Joined At</label>
+                            <input type="text" id="participant-joined" th:value="${participant['joinedAt']}" readonly>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="participants">
-        <h3>Participants</h3>
-        <table>
-            <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Joined At</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="participant : ${formattedParticipants}">
-                <td th:text="${participant.key}"></td>
-                <td th:text="${participant.value}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-
 </main>
-
-<!--<script>-->
-<!--    // Добавляем событие на кнопку "Join"-->
-<!--    document.getElementById('joinButton').addEventListener('click', function() {-->
-<!--        // Получаем данные события-->
-<!--        const eventTitle = document.querySelector('.event-title').innerText;-->
-
-<!--        // Сохраняем событие в localStorage-->
-<!--        const joinedEvents = JSON.parse(localStorage.getItem('joinedEvents')) || [];-->
-<!--        if (!joinedEvents.includes(eventTitle)) {-->
-<!--            joinedEvents.push(eventTitle);-->
-<!--        }-->
-<!--        localStorage.setItem('joinedEvents', JSON.stringify(joinedEvents));-->
-
-<!--        // Перенаправляем обратно на страницу /events-->
-<!--        window.location.href = '/events';-->
-<!--    });-->
-<!--</script>-->
 </body>
 </html>
